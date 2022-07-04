@@ -1,10 +1,37 @@
 console.log ("Contactanos y calcula el costo de tu proyecto")
 
-let nombre = prompt ("Ingrese su nombre")
 
-let celular = prompt ("Ingrese su celular")
-while(isNaN(celular)) {alert("No es un numero válido, ingrese su celular");
-	celular = prompt("Ingresar un numero valido")}
+let nombre
+const nombrecg = localStorage.getItem('name')
+
+
+if (nombrecg) {
+    nombre = nombrecg
+} else {
+    nombre = prompt("Ingrese su nombre")
+    localStorage.setItem("name", nombre)
+}
+
+
+// let nombre = prompt ("Ingrese su nombre")
+
+
+let celular
+const celularcg = localStorage.getItem('cel')
+
+
+if (celularcg) {
+    celular = celularcg
+} else {
+        celular = prompt ("Ingrese su celular")
+        // while(isNaN(celular)) {alert("No es un numero válido, ingrese su celular");
+        // celular = prompt("Ingresar un numero valido")}
+    localStorage.setItem("cel", celular)
+}
+
+// let celular = prompt ("Ingrese su celular")
+// while(isNaN(celular)) {alert("No es un numero válido, ingrese su celular");
+// 	celular = prompt("Ingresar un numero valido")}
 
 let mail = prompt ("Ingrese su mail")
 
